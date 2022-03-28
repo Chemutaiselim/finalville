@@ -17,6 +17,8 @@ import 'package:finalville/build/build_icon.dart';
 import 'package:geolocator/geolocator.dart' hide ServiceStatus;
 import 'package:image_picker/image_picker.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart';
 
 class User {
   double? longitude;
@@ -95,6 +97,22 @@ class _PostState extends State<Post> {
   final description = TextEditingController();
   final location = TextEditingController();
   final type = TextEditingController();
+  Future uploadFile() async {
+    if (image == null) return;
+    final fileName = basename(image!.path);
+    final destination = 'files/$fileName';
+
+    try {
+      final ref = FirebaseStorage.instance
+          .ref(destination)
+          .child('file/');
+      await ref.putFile(image!);
+    } catch (e) {
+      print('error occured');
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final post = database.child('post');
