@@ -1,3 +1,4 @@
+import 'package:finalville/screen/constants/constants.dart';
 import 'package:finalville/screen/items.dart';
 import 'package:finalville/screen/map.dart';
 import 'package:finalville/screen/post.dart';
@@ -61,12 +62,12 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.menu,
-                          color: currentTab == 0 ? Colors.blue : Colors.grey,
+                          color: currentTab == 0 ? kGreen : Color.fromARGB(255, 104, 104, 104),
                         ),
                         Text(
                           'Items',
                           style: TextStyle(
-                            color: currentTab == 0 ? Colors.blue : Colors.grey,
+                            color: currentTab == 0 ? kGreen : Color.fromARGB(255, 112, 112, 112),
                           ),
                         ),
                       ],
@@ -95,12 +96,12 @@ class _HomeState extends State<Home> {
                         Icon(
                           Icons.map,
                           size: 30,
-                          color: currentTab == 2 ? Colors.blue : Colors.grey,
+                          color: currentTab == 2 ? kGreen : Color.fromARGB(255, 105, 105, 105),
                         ),
                         Text(
                           'Map',
                           style: TextStyle(
-                            color: currentTab == 2 ? Colors.blue : Colors.grey,
+                            color: currentTab == 2 ? kGreen : Color.fromARGB(255, 107, 107, 107),
                           ),
                         ),
                       ],
