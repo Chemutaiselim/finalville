@@ -43,10 +43,18 @@ class _PlasticState extends State<Plastic> {
                             location: nextOrder['location'],
                             distance: 200,
                             func: () {});
+                        datalist.add(order);
                       });
                       print("Emilio");
+                      
+                      
                     }
-                    return Center(child: const CircularProgressIndicator());
+                    return Expanded(
+                        child:ListView(
+                          children: datalist,
+                        ),
+                      );
+                    
                   }),
               DisplayItems(
                 func: () {},
