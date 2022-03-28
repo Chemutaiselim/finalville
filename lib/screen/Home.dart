@@ -31,6 +31,7 @@ class _HomeState extends State<Home> {
         bucket: bucket,
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: kGreen,
         child: Icon(Icons.add),
         onPressed: () {
           Get.to(Post());
