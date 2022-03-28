@@ -2,6 +2,7 @@
 
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:finalville/Stream/stream_data.dart';
+import 'package:finalville/screen/post.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,6 @@ class Plastic extends StatefulWidget {
 }
 
 class _PlasticState extends State<Plastic> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,15 +33,18 @@ class _PlasticState extends State<Plastic> {
                   builder: (context, snapshot) {
                     final datalist = <DisplayItems>[];
                     if (snapshot.hasData) {
-                      final myOrders = snapshot.data as List<PostModel>;
-                      print(myOrders);
-                      // datalist.addAll(myOrders.map((order) => DisplayItems(
-                      //       func: () {},
-                      //       imageUrl: order.image,
-                      //       distance: 200,
-                      //       category: order.title,
-                      //       location: order.location,
-                      //     )));
+                      final myOrders = Map<String, dynamic>.from(
+                          (snapshot.data as Map<String, dynamic>));
+                      myOrders.forEach((key, value) {
+                        final nextOrder = Map<String, dynamic>.from(value);
+                        final order = DisplayItems(
+                            imageUrl: "assets/images/m1.jpg",
+                            category: nextOrder['category'],
+                            location: nextOrder['location'],
+                            distance: 200,
+                            func: () {});
+                      });
+                      print("Emilio");
                     }
                     return Center(child: const CircularProgressIndicator());
                   }),
