@@ -2,6 +2,7 @@
 
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:finalville/Stream/stream_data.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:finalville/build/build_diagrams_items.dart';
@@ -17,6 +18,7 @@ class Plastic extends StatefulWidget {
 }
 
 class _PlasticState extends State<Plastic> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +46,7 @@ class _PlasticState extends State<Plastic> {
                     return Center(child: const CircularProgressIndicator());
                   }),
               DisplayItems(
-                func: () {
-                },
+                func: () {},
                 category: "plastics",
                 imageUrl: 'assets/images/p2.jpg',
                 location: 'Chuka University,Chuka',
