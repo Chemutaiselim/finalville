@@ -109,6 +109,17 @@ class _PostState extends State<Post> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                Container(
+                  width: 40,
+                  height:40,
+                  decoration: BoxDecoration(
+                    color: kGreen,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Icon(
+                    Icons.forward,
+                  ),
+                ),
                 Text("Title",
                     style: GoogleFonts.robotoCondensed(
                         fontSize: 23,
