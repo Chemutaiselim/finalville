@@ -105,35 +105,33 @@ class _PostState extends State<Post> {
       overflowRules: OverflowRules.all(true),
       child: SingleChildScrollView(
         child: Column(children: [
-           GestureDetector(
-             onTap: (){
-               Get.back();
-             },
-             child: Padding(
-               padding: const EdgeInsets.only(top: 35,left:15),
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.start,
-                 children: [
-                   Container(
-                     padding: const EdgeInsets.all(7),
-                          width: 40,
-                          height:40,
-                          decoration: BoxDecoration(
-                            color: kGreen,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Image.asset("assets/images/back.png")
-                        ),
-                 ],
-               ),
-             ),
-           ),
+          GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(top: 35, left: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                      padding: const EdgeInsets.all(7),
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: kGreen,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Image.asset("assets/images/back.png")),
+                ],
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(bottom: 10, left: 15, top: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-               
                 Text("Title",
                     style: GoogleFonts.robotoCondensed(
                         fontSize: 23,
@@ -218,6 +216,7 @@ class _PostState extends State<Post> {
               value: selectedType,
               onChanged: (value) {
                 setState(() {
+                  getLocation();
                   selectedType = value as String;
                   print(selectedType);
                 });
@@ -442,9 +441,15 @@ class _PostState extends State<Post> {
                     'location': location.text,
                     'type': selectedType,
                     'image': image?.path,
-
+                    'longitude': longitude,
+                    'latitude': latitude,
                   };
-                  database.child('post').push().set(order).then((_) => print("data has been written")).catchError((e)=>print(e));
+                  database
+                      .child('post')
+                      .push()
+                      .set(order)
+                      .then((_) => print("data has been written"))
+                      .catchError((e) => print(e));
                   // setState(() {
                   //   Navigator.of(context).pushReplacement(
                   //       MaterialPageRoute(builder: ((context) => Items())));
