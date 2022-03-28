@@ -8,6 +8,7 @@ import 'package:finalville/screen/constants/constants.dart';
 import 'package:firebase_database/firebase_database.dart';
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location_permissions/location_permissions.dart';
@@ -104,22 +105,35 @@ class _PostState extends State<Post> {
       overflowRules: OverflowRules.all(true),
       child: SingleChildScrollView(
         child: Column(children: [
+           GestureDetector(
+             onTap: (){
+               Get.back();
+             },
+             child: Padding(
+               padding: const EdgeInsets.only(top: 35,left:15),
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                 children: [
+                   Container(
+                     padding: const EdgeInsets.all(7),
+                          width: 40,
+                          height:40,
+                          decoration: BoxDecoration(
+                            color: kGreen,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Image.asset("assets/images/back.png")
+                        ),
+                 ],
+               ),
+             ),
+           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 10, left: 15, top: 30),
+            padding: const EdgeInsets.only(bottom: 10, left: 15, top: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  width: 40,
-                  height:40,
-                  decoration: BoxDecoration(
-                    color: kGreen,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Icon(
-                    Icons.forward,
-                  ),
-                ),
+               
                 Text("Title",
                     style: GoogleFonts.robotoCondensed(
                         fontSize: 23,
