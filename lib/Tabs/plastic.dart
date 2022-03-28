@@ -49,10 +49,9 @@ class _PlasticState extends State<Plastic> {
                       
                       
                     }
-                    return Expanded(
-                        child:ListView(
+                    return ListView(
                           children: datalist,
-                        ),
+                       
                       );
                     
                   }),
