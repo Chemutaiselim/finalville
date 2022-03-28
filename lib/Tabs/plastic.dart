@@ -3,6 +3,8 @@
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:finalville/Stream/stream_data.dart';
 import 'package:finalville/screen/post.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +21,10 @@ class Plastic extends StatefulWidget {
 }
 
 class _PlasticState extends State<Plastic> {
+  final database = FirebaseDatabase.instance.ref().child('post');
+  void read(){
+    
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,16 +52,31 @@ class _PlasticState extends State<Plastic> {
               //           datalist.add(order);
               //         });
               //         print("Emilio");
-                      
-                      
+
               //       }
               //       return ListView(
               //             children: datalist,
-                       
+
               //         );
-                    
+
               //     }),
-              
+              // FirebaseAnimatedList(
+              //     query: database,
+              //     itemBuilder: (BuildContext context, DataSnapshot snapshot,
+              //         Animation<double> animation, int index) {
+              //           List<String> listStaff =
+              //               snapshot.data.value.toString().split(",");
+              //       return ListTile(
+              //         leading: CircleAvatar(
+              //           backgroundImage:
+              //               NetworkImage(snapshot.value['imageUrl']),
+              //         ),
+              //         title:snapshot.value['category'],
+              //         subtitle: Text(snapshot.value['location']),
+              //         trailing: Text(snapshot.value['distance'].toString()),
+              //       );
+              //     }),
+
               DisplayItems(
                 func: () {},
                 category: "plastics",
