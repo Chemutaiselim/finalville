@@ -22,14 +22,14 @@ import 'package:location_permissions/location_permissions.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 
 
-class Mapp extends StatefulWidget {
-  Mapp({Key? key}) : super(key: key);
+class MapLocation extends StatefulWidget {
+  MapLocation({Key? key}) : super(key: key);
 
   @override
-  State<Mapp> createState() => _MappState();
+  State<MapLocation> createState() => _MapLocationState();
 }
 
-class _MappState extends State<Mapp> {
+class _MapLocationState extends State<MapLocation> {
   final search = TextEditingController();
   Set<Marker> markers = {};
   GoogleMapController? newGoogleMapController;
