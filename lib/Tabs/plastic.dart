@@ -35,13 +35,13 @@ class _PlasticState extends State<Plastic> {
                     if (snapshot.hasData) {
                       final myOrders = snapshot.data as List<PostModel>;
                       print(myOrders);
-                      datalist.addAll(myOrders.map((order) => DisplayItems(
-                            func: () {},
-                            imageUrl: order.image,
-                            distance: 200,
-                            category: order.title,
-                            location: order.location,
-                          )));
+                      // datalist.addAll(myOrders.map((order) => DisplayItems(
+                      //       func: () {},
+                      //       imageUrl: order.image,
+                      //       distance: 200,
+                      //       category: order.title,
+                      //       location: order.location,
+                      //     )));
                     }
                     return Center(child: const CircularProgressIndicator());
                   }),
