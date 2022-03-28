@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.dashboard,size: 30,
+                          Icons.map,size: 30,
                           color: currentTab == 2 ? Colors.blue : Colors.grey,
                         ),
                         Text(
