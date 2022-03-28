@@ -1,6 +1,8 @@
 import 'package:finalville/screen/items.dart';
 import 'package:finalville/screen/map.dart';
+import 'package:finalville/screen/post.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,7 +18,6 @@ class _HomeState extends State<Home> {
   final List<Widget> screens = [
     MapLocation(),
     Items(),
-    
   ]; // to store nested tabs
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = MapLocation(); // Our first view in viewport
@@ -30,7 +31,9 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Get.to(Post());
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
@@ -90,7 +93,8 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.map,size: 30,
+                          Icons.map,
+                          size: 30,
                           color: currentTab == 2 ? Colors.blue : Colors.grey,
                         ),
                         Text(
@@ -104,7 +108,6 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               )
-
             ],
           ),
         ),
@@ -112,4 +115,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
