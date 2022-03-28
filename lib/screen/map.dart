@@ -1,14 +1,14 @@
 import "package:flutter/material.dart";
 
 
-class Map extends StatefulWidget {
-  const Map({Key? key}) : super(key: key);
+class MapLocation extends StatefulWidget {
+  const MapLocation({Key? key}) : super(key: key);
 
   @override
-  State<Map> createState() => _MapState();
+  State<MapLocation> createState() => _MapLocationState();
 }
 
-class _MapState extends State<Map> {
+class _MapLocationState extends State<MapLocation> {
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
