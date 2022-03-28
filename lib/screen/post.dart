@@ -97,6 +97,19 @@ class _PostState extends State<Post> {
   final description = TextEditingController();
   final location = TextEditingController();
   final type = TextEditingController();
+  Future uploadFile() async {
+    if (image == null) return;
+    final fileName = basename(image!.path);
+    final destination = 'files/$fileName';
+
+    try {
+      final ref = FirebaseStorage.instance.ref(destination).child('file/');
+      await ref.putFile(image!);
+      print("File uploaded");
+    } catch (e) {
+      print('error occured');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -438,22 +451,7 @@ class _PostState extends State<Post> {
                   ), // Background color
                 ),
                 onPressed: () async {
-                  Future uploadFile() async {
-                    if (image == null) return;
-                    final fileName = basename(image!.path);
-                    final destination = 'files/$fileName';
-
-                    try {
-                      final ref = FirebaseStorage.instance
-                          .ref(destination)
-                          .child('file/');
-                      await ref.putFile(image!);
-                      print("File uploaded");
-                    } catch (e) {
-                      print('error occured');
-                    }
-                  }
-
+                  await uploadFile();
                   final order = <String, dynamic>{
                     'description': description.text,
                     'title': title.text,
