@@ -62,11 +62,11 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.menu,
+                          Icons.map,
                           color: currentTab == 0 ? kGreen : Color.fromARGB(255, 104, 104, 104),
                         ),
                         Text(
-                          'Items',
+                          'Map',
                           style: TextStyle(
                             color: currentTab == 0 ? kGreen : Color.fromARGB(255, 112, 112, 112),
                           ),
@@ -95,12 +95,12 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.map,
+                          Icons.menu,
                           size: 30,
                           color: currentTab == 2 ? kGreen : Color.fromARGB(255, 105, 105, 105),
                         ),
                         Text(
-                          'Map',
+                          'Items',
                           style: TextStyle(
                             color: currentTab == 2 ? kGreen : Color.fromARGB(255, 107, 107, 107),
                           ),
