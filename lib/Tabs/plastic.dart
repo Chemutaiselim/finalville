@@ -28,33 +28,34 @@ class _PlasticState extends State<Plastic> {
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              StreamBuilder(
-                  stream: DataStream().getPostStream(),
-                  builder: (context, snapshot) {
-                    final datalist = <DisplayItems>[];
-                    if (snapshot.hasData) {
-                      final myOrders = Map<String, dynamic>.from(
-                          (snapshot.data as Map<String, dynamic>));
-                      myOrders.forEach((key, value) {
-                        final nextOrder = Map<String, dynamic>.from(value);
-                        final order = DisplayItems(
-                            imageUrl: "assets/images/m1.jpg",
-                            category: nextOrder['category'],
-                            location: nextOrder['location'],
-                            distance: 200,
-                            func: () {});
-                        datalist.add(order);
-                      });
-                      print("Emilio");
+              // StreamBuilder(
+              //     stream: DataStream().getPostStream(),
+              //     builder: (context, snapshot) {
+              //       final datalist = <DisplayItems>[];
+              //       if (snapshot.hasData) {
+              //         final myOrders = Map<String, dynamic>.from(
+              //             (snapshot.data as Map<String, dynamic>));
+              //         myOrders.forEach((key, value) {
+              //           final nextOrder = Map<String, dynamic>.from(value);
+              //           final order = DisplayItems(
+              //               imageUrl: "assets/images/m1.jpg",
+              //               category: nextOrder['category'],
+              //               location: nextOrder['location'],
+              //               distance: 200,
+              //               func: () {});
+              //           datalist.add(order);
+              //         });
+              //         print("Emilio");
                       
                       
-                    }
-                    return ListView(
-                          children: datalist,
+              //       }
+              //       return ListView(
+              //             children: datalist,
                        
-                      );
+              //         );
                     
-                  }),
+              //     }),
+              
               DisplayItems(
                 func: () {},
                 category: "plastics",
