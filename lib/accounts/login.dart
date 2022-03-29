@@ -127,7 +127,7 @@ class _LoginState extends State<Login> {
                                   gravity: ToastGravity.TOP,
                                   timeInSecForIosWeb: 1,
                                   fontSize: 16.0);
-                              Get.to(Home());
+                              
                             } else if (email.text.isEmpty) {
                               Fluttertoast.showToast(
                                   msg: 'Enter Email',
