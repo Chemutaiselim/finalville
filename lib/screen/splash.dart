@@ -34,11 +34,17 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       backgroundColor: Color.fromARGB(236, 255, 255, 255),
       extendBodyBehindAppBar: true,
-      body: Center(child:Text("EcoVille",
-                      style: GoogleFonts.roboto(
-                          fontSize: 35,
-                          color: kGreen,
-                          fontWeight: FontWeight.w500)))
+      body: Center(
+        child:Column(
+          children: [
+            Image.asset("assets/logoE.png"),
+            Text("EcoVille",
+                          style: GoogleFonts.roboto(
+                              fontSize: 35,
+                              color: kGreen,
+                              fontWeight: FontWeight.w500)),
+          ],
+        ))
     );
   }
 }
