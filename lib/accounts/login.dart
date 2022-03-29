@@ -159,7 +159,7 @@ class _LoginState extends State<Login> {
                                   .login(email.text, password.text, context);
                               if (result != null) {
                                 Fluttertoast.showToast(
-                                  msg: 'Enter Email',
+                                  msg: 'Success',
                                   toastLength: Toast.LENGTH_SHORT,
                                   gravity: ToastGravity.TOP,
                                   timeInSecForIosWeb: 1,
