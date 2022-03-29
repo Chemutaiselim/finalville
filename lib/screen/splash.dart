@@ -36,8 +36,10 @@ class _SplashState extends State<Splash> {
       extendBodyBehindAppBar: true,
       body: Center(
         child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/logoE.png"),
+            Image.asset("assets/images/logoE.png",height: 120,width:120),
+            SizedBox(height: size.height* 0.01),
             Text("EcoVille",
                           style: GoogleFonts.roboto(
                               fontSize: 35,
