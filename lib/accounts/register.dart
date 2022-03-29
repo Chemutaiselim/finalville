@@ -134,7 +134,7 @@ class _RegisterState extends State<Register> {
                                   .register(email.text, password.text, context);
                               if (result != null) {
                                 print("success");
-                                print(result.email);
+                                print(result);
                               }
                               Fluttertoast.showToast(
                                   msg: 'Account created',
