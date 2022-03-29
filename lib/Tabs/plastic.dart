@@ -22,9 +22,15 @@ class Plastic extends StatefulWidget {
 
 class _PlasticState extends State<Plastic> {
   final database = FirebaseDatabase.instance.ref().child('post');
-  void read(){
-    
+  void read() {
+    database.once().then((DataSnapshot snapshot) {
+      Map<dynamic, dynamic> values = snapshot.value as Map<dynamic,dynamic>;
+      values.forEach(((key, value) {
+        print(value);
+      }));
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
