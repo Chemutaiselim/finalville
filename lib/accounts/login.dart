@@ -141,23 +141,29 @@ class _LoginState extends State<Login> {
                                   fontSize: 16.0);
                             }
                             if (email.text == "") {
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(
-                                content: Text("email required"),
-                                backgroundColor: Colors.red,
-                                duration: Duration(milliseconds: 500),
-                              ));
+                              Fluttertoast.showToast(
+                                  msg: 'Email required ',
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.TOP,
+                                  timeInSecForIosWeb: 1,
+                                  fontSize: 16.0);
                             } else if (password.text == "") {
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(
-                                content: Text("password required"),
-                                backgroundColor: Colors.red,
-                                duration: Duration(milliseconds: 500),
-                              ));
+                              Fluttertoast.showToast(
+                                  msg: 'Password required',
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.TOP,
+                                  timeInSecForIosWeb: 1,
+                                  fontSize: 16.0);
                             } else {
                               var result = await AuthService()
                                   .login(email.text, password.text, context);
                               if (result != null) {
+                                Fluttertoast.showToast(
+                                  msg: 'Enter Email',
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.TOP,
+                                  timeInSecForIosWeb: 1,
+                                  fontSize: 16.0);
                                 print("success");
                                 print(result.email);
                               }
