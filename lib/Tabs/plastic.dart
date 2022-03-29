@@ -100,7 +100,7 @@ class _PlasticState extends State<Plastic> {
               DisplayItems(
                 func: () {},
                 category: "plastics",
-                imageUrl: 'assets/images/p3jpg',
+                imageUrl: 'assets/images/p3.jpg',
                 location: 'Chuka University,Chuka',
                 distance: 500,
               ),
