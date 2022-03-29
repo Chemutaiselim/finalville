@@ -120,29 +120,29 @@ class _LoginState extends State<Login> {
                               loading = true;
                             });
                             _isValid = EmailValidator.validate(email.text);
-                            if (_isValid) {
-                              Fluttertoast.showToast(
-                                  msg: "Valid Email",
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.TOP,
-                                  timeInSecForIosWeb: 1,
-                                  fontSize: 16.0);
+                            // if (_isValid) {
+                            //   Fluttertoast.showToast(
+                            //       msg: "Valid Email",
+                            //       toastLength: Toast.LENGTH_SHORT,
+                            //       gravity: ToastGravity.TOP,
+                            //       timeInSecForIosWeb: 1,
+                            //       fontSize: 16.0);
                               
-                            } else if (email.text.isEmpty) {
-                              Fluttertoast.showToast(
-                                  msg: 'Enter Email',
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.TOP,
-                                  timeInSecForIosWeb: 1,
-                                  fontSize: 16.0);
-                            } else {
-                              Fluttertoast.showToast(
-                                  msg: 'Enter a Valid Email',
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.TOP,
-                                  timeInSecForIosWeb: 1,
-                                  fontSize: 16.0);
-                            }
+                            // } else if (email.text.isEmpty) {
+                            //   Fluttertoast.showToast(
+                            //       msg: 'Enter Email',
+                            //       toastLength: Toast.LENGTH_SHORT,
+                            //       gravity: ToastGravity.TOP,
+                            //       timeInSecForIosWeb: 1,
+                            //       fontSize: 16.0);
+                            // } else {
+                            //   Fluttertoast.showToast(
+                            //       msg: 'Enter a Valid Email',
+                            //       toastLength: Toast.LENGTH_SHORT,
+                            //       gravity: ToastGravity.TOP,
+                            //       timeInSecForIosWeb: 1,
+                            //       fontSize: 16.0);
+                            // }
                             if (email.text == "") {
                               Fluttertoast.showToast(
                                   msg: 'Email required ',
@@ -167,6 +167,7 @@ class _LoginState extends State<Login> {
                                     gravity: ToastGravity.TOP,
                                     timeInSecForIosWeb: 1,
                                     fontSize: 16.0);
+                                    Get.to(const Home());
                                 print("success");
                                 print(result.email);
                               }
