@@ -167,12 +167,12 @@ class _LoginState extends State<Login> {
                                 print("success");
                                 print(result.email);
                               }
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(
-                                content: Text("Signed in "),
-                                backgroundColor: Colors.blue[900],
-                                duration: Duration(milliseconds: 500),
-                              ));
+                              Fluttertoast.showToast(
+                                  msg: 'Signed in',
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.TOP,
+                                  timeInSecForIosWeb: 1,
+                                  fontSize: 16.0);
                             }
                             setState(() {
                               loading = false;
