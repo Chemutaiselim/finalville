@@ -167,10 +167,11 @@ class _LoginState extends State<Login> {
                                     gravity: ToastGravity.TOP,
                                     timeInSecForIosWeb: 1,
                                     fontSize: 16.0);
+                                    Get.to(const Home());
                               }
                               print("success");
                                 // print(result.email);
-                              Get.to(const Home());
+                              
                               Fluttertoast.showToast(
                                   msg: 'Signed in',
                                   toastLength: Toast.LENGTH_SHORT,
