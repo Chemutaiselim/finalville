@@ -8,8 +8,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
+import '../screen/Home.dart';
 import '../screen/constants/constants.dart';
 
 class Register extends StatefulWidget {
@@ -140,6 +142,7 @@ class _RegisterState extends State<Register> {
                                   gravity: ToastGravity.TOP,
                                   timeInSecForIosWeb: 1,
                                   fontSize: 16.0);
+                                  Get.to(const Home());
                             } else if (email.text.isEmpty &&
                                 password.text.isEmpty) {
                               Fluttertoast.showToast(

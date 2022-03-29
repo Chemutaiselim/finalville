@@ -2,10 +2,12 @@
 
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:email_validator/email_validator.dart';
 import '../build/social.dart';
+import '../screen/Home.dart';
 import '../screen/constants/constants.dart';
 import 'auth.dart';
 
@@ -125,6 +127,7 @@ class _LoginState extends State<Login> {
                                   gravity: ToastGravity.TOP,
                                   timeInSecForIosWeb: 1,
                                   fontSize: 16.0);
+                              Get.to(Home());
                             } else if (email.text.isEmpty) {
                               Fluttertoast.showToast(
                                   msg: 'Enter Email',
@@ -159,11 +162,11 @@ class _LoginState extends State<Login> {
                                   .login(email.text, password.text, context);
                               if (result != null) {
                                 Fluttertoast.showToast(
-                                  msg: 'Success',
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.TOP,
-                                  timeInSecForIosWeb: 1,
-                                  fontSize: 16.0);
+                                    msg: 'Success',
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.TOP,
+                                    timeInSecForIosWeb: 1,
+                                    fontSize: 16.0);
                                 print("success");
                                 print(result.email);
                               }
