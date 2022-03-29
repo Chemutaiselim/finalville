@@ -167,8 +167,9 @@ class _LoginState extends State<Login> {
                                     gravity: ToastGravity.TOP,
                                     timeInSecForIosWeb: 1,
                                     fontSize: 16.0);
-                                    Get.to(const Home());
+                                   
                               }
+                               Get.to(const Home());
                               print("success");
                                 // print(result.email);
                               
