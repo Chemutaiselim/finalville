@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:finalville/Stream/stream_data.dart';
 import 'package:finalville/screen/post.dart';
@@ -30,6 +31,9 @@ class _PlasticState extends State<Plastic> {
   //     }));
   //   });
   // }
+  final String ?documentId;
+
+  GetStudentName(this.documentId);
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +86,31 @@ class _PlasticState extends State<Plastic> {
               //         trailing: Text(snapshot.value['distance'].toString()),
               //       );
               //     }),
+              FutureBuilder<DocumentSnapshot>(
+      //Fetching data from the documentId specified of the student
+      future: students.doc(documentId).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        
+
+        //Error Handling conditions
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.hasData && !snapshot.data!.exists) {
+          return Text("Document does not exist");
+        }
+
+        //Data is output to the user
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
+          return Text("Full Name: ${data['full_name']} ${data['last_name']}");
+        }
+
+        return Text("loading");
+      },
+    );
 
               DisplayItems(
                 func: () {},
