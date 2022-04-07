@@ -10,7 +10,8 @@ We aim to improve the state of the environment especially in third world countri
 1. People living in highly poluted environments e.g. dumpsters 
 2. People who get a living out of recyling or reusing of waste.
 
-## UI of the app
+## UI of the app 
+<a href= "https://www.figma.com/file/9P2ZQDvi8qpRuvVXpjTgod/EcoVille-UI-(Copy)?node-id=0%3A1"> Click to get the Ui of the app </a>
 
 This opens in figma.
 It has been prototyped and has 3 flows:
@@ -43,7 +44,8 @@ It has been prototyped and has 3 flows:
 ## Flaws of the current app
 
 1. The app doesnt display the data from firebase database on the map...
-2. A
+2. The app is a bit slow 
+3. Some UI parts need adjusting 
 
 ## Yet to be done
 
@@ -53,4 +55,10 @@ It has been prototyped and has 3 flows:
 
 ## Steps to run the app
 
-1. 
+
+## Group Members 
+
+1. Pamela Chemutai - Product Manager/ Android Devloper 
+2. Emilio Kariuki - Flutter Developer
+3. Ed Agaba - Android Developer  
+4. Elizabeth Musanga - Research team/ Market Analyst  
