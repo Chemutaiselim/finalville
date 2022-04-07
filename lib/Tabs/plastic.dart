@@ -31,9 +31,9 @@ class _PlasticState extends State<Plastic> {
   //     }));
   //   });
   // }
-  final String ?documentId;
+  // final String ?documentId;
 
-  GetStudentName(this.documentId);
+  // GetStudentName(this.documentId);
 
   @override
   Widget build(BuildContext context) {
@@ -86,31 +86,31 @@ class _PlasticState extends State<Plastic> {
               //         trailing: Text(snapshot.value['distance'].toString()),
               //       );
               //     }),
-              FutureBuilder<DocumentSnapshot>(
-      //Fetching data from the documentId specified of the student
-      future: students.doc(documentId).get(),
-      builder:
-          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+    //           FutureBuilder<DocumentSnapshot>(
+    //   //Fetching data from the documentId specified of the student
+    //   future: students.doc(documentId).get(),
+    //   builder:
+    //       (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         
 
-        //Error Handling conditions
-        if (snapshot.hasError) {
-          return Text("Something went wrong");
-        }
+    //     //Error Handling conditions
+    //     if (snapshot.hasError) {
+    //       return Text("Something went wrong");
+    //     }
 
-        if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
-        }
+    //     if (snapshot.hasData && !snapshot.data!.exists) {
+    //       return Text("Document does not exist");
+    //     }
 
-        //Data is output to the user
-        if (snapshot.connectionState == ConnectionState.done) {
-          Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
-          return Text("Full Name: ${data['full_name']} ${data['last_name']}");
-        }
+    //     //Data is output to the user
+    //     if (snapshot.connectionState == ConnectionState.done) {
+    //       Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
+    //       return Text("Full Name: ${data['full_name']} ${data['last_name']}");
+    //     }
 
-        return Text("loading");
-      },
-    );
+    //     return Text("loading");
+    //   },
+    // );
 
               DisplayItems(
                 func: () {},
